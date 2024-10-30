@@ -24,7 +24,7 @@ This guide will walk you through the steps to run a Zether node. Follow each ste
 1. Start your node using the `geth` command. When running your node for the first time, add the `console` flag to interact with it:
 
     ```bash
-    ./geth --datadir ./data --networkid 715131 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" console
+    ./geth --datadir ./data --networkid 715131 --port 30157 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" console
     ```
 
    This command will start your node in full synchronization mode and enable an interactive console.
@@ -47,12 +47,26 @@ This guide will walk you through the steps to run a Zether node. Follow each ste
 2. If you want to enable mining, you can add the `--mine` flag along with mining parameters:
 
     ```bash
-    ./geth --datadir ./data --networkid 715131 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" --mine --miner.threads=1 --miner.etherbase 0xYourEthereumAddress
+    ./geth --datadir ./data --networkid 715131 --port 30157 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" --mine --miner.threads=1 --miner.etherbase 0xYourEthereumAddress
     ```
 
    Replace `0xYourEthereumAddress` with your own Ethereum address to receive mining rewards.
 
 ## Additional Information
+
+### Port Configuration for Running a Zether Node
+
+When setting up your Zether node, you can specify any valid, open network port for communication with the network. The `--port` and `--http.port` flags are customizable, allowing you to adjust your node's communication ports to match your network configuration or security preferences.
+
+- **P2P Port (`--port`)**: This port is used for peer-to-peer (P2P) networking, allowing your node to connect to and interact with other nodes on the network. In the example, it’s set to `30157`, but you can use any open port that doesn’t conflict with other services on your system. For security and accessibility, ensure the chosen port is permitted by your firewall or security settings.
+
+- **HTTP Port (`--http.port`)**: This port enables HTTP-based communication with the node’s API, letting you access JSON-RPC API endpoints. The default HTTP port is often `8545`, but it can be set to any valid port number. This port should also be firewall-configured, especially if your node is publicly accessible, to prevent unauthorized access.
+
+To customize ports, replace the values in the commands:
+```bash
+--port <your_desired_port> --http.port <your_http_port>
+
+Be mindful that choosing unique ports outside common ranges can help improve security. However, ensure these ports are allowed on your network for proper connectivity to the Zether network.
 
 - **API Exposure**: The `--http.api` flag exposes specific APIs. Adjust the options depending on your needs.
 - **Security Considerations**: Ensure that your node is protected, especially when running in an open network, by configuring the firewall and using appropriate HTTP settings.
