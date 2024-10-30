@@ -62,14 +62,16 @@ When setting up your Zether node, you can specify any valid, open network port f
 
 - **HTTP Port (`--http.port`)**: This port enables HTTP-based communication with the node’s API, letting you access JSON-RPC API endpoints. The default HTTP port is often `8545`, but it can be set to any valid port number. This port should also be firewall-configured, especially if your node is publicly accessible, to prevent unauthorized access.
 
+- **WebSocket Port (`--ws.port`)**: This port is for WebSocket communication, which enables real-time updates and interaction with the node. By default, this port is often set to `8546`, but, like the other ports, it can be customized. Ensure this port is open in your firewall if you intend to use WebSocket connections with your node.
+
 To customize ports, replace the values in the commands:
 ```bash
---port <your_desired_port> --http.port <your_http_port>
+--port <your_desired_port> --http.port <your_http_port> --ws.port <your_ws_port>
 ```
 
 Be mindful that choosing unique ports outside common ranges can help improve security. However, ensure these ports are allowed on your network for proper connectivity to the Zether network.
 
-- **API Exposure**: The `--http.api` flag exposes specific APIs. Adjust the options depending on your needs.
+- **API Exposure**: The `--http.api` and `--ws.api` flags expose specific APIs. Adjust the options depending on your needs.
 - **Security Considerations**: Ensure that your node is protected, especially when running in an open network, by configuring the firewall and using appropriate HTTP settings.
 
 ## Troubleshooting
