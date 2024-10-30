@@ -65,6 +65,7 @@ When setting up your Zether node, you can specify any valid, open network port f
 To customize ports, replace the values in the commands:
 ```bash
 --port <your_desired_port> --http.port <your_http_port>
+```
 
 Be mindful that choosing unique ports outside common ranges can help improve security. However, ensure these ports are allowed on your network for proper connectivity to the Zether network.
 
