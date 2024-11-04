@@ -2,12 +2,19 @@
 
 This guide will walk you through the steps to run a Zether node. Follow each step carefully to initialize, start, and run your node properly.
 
+## Prerequisites
+
+Before beginning, make sure you have downloaded the necessary files:
+
+- **[Zether Node Client](https://github.com/ZetherOrg/go-zether)**: The binary client required to run the Zether node.
+- **[Zether Genesis File](https://github.com/ZetherOrg/genesis)**: The `zether.json` file to initialize the genesis block.
+
 ## Steps to Run a Zether Node
 
 ### Step 1: Create a Folder and Download the Files
 
 1. Create a new folder where you want to store your Zether node files.
-2. Download the binary file and the genesis file (`zether.json`) and place them in this folder.
+2. Download the **[Zether Node Client](https://github.com/ZetherOrg/go-zether)** and the **[genesis file](https://github.com/ZetherOrg/genesis)** (`zether.json`) and place them in this folder.
 
 ### Step 2: Initialize the Genesis and Define Directory
 
